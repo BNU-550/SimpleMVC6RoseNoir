@@ -1,4 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SimpleMVC6RoseNoir.Models
@@ -15,11 +15,11 @@ namespace SimpleMVC6RoseNoir.Models
 
         [DataType(DataType.Currency)]
         [Column(TypeName = "decimal(18, 2)")]
-        [DisplayFormat(DataFormatString = "{0:C0}", ApplyFormatInEditMode = true)]
+        [DisplayFormat(DataFormatString = "{0:C0}")]
         public decimal Price { get; set; } = 0;
 
         // Navigation Property
 
-        public virtual ICollection<Variation> Variations { get; set; }
+        public virtual ICollection<Variation> Variations { get; set; } = new List<Variation>();
     }
 }
